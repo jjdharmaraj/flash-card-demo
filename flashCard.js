@@ -10,11 +10,7 @@ class Card extends React.Component {
         };
     }
     render() {
-        //back && answer=true are the english and front && answer=false is the simplified
-        //this.props.simplifiedContent + this.props.pinyinContent
-        // const frontContent = React.createElement("div", {}, this.props.simplifiedContent)
-        //      React.createElement("div", {}, this.props.pinyinContent);
-        // const frontContent = this.props.simplifiedContent + '\n' +  this.props.pinyinContent;
+        //back && answer=true are the english and front && answer=false is the simplified/pinyin
         const pinyinContent = this.props.pinyinContent;
         const content = this.state.showAnswer ? this.props.backContent : this.props.simplifiedContent;
         const audioFile = this.state.showAnswer ? this.props.backAudio : this.props.frontAudio;
