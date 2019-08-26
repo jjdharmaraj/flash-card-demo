@@ -1,6 +1,4 @@
 const QUESTION_URL = `https://pdlahxxojf.execute-api.us-east-1.amazonaws.com/prod/basic-test/`
-//Tried hosting this flash card web app on azure, but it says I am limited to one free linux per subscription which
-//is fine but weird since I have nothing and it still won't let me deploy.  Perhaps use GitHub.
 class Card extends React.Component {
 
     constructor() {
@@ -71,9 +69,6 @@ class CardContainer extends React.Component {
         this.boundShowPrevCard = this.showPrevCard.bind(this);
         this.boundShowNextCard = this.showNextCard.bind(this);
     }
-    //The URL, method, and body will need to be changed based on Game API.
-    //https://cloud.google.com/functions/docs/writing/http#handling_cors_requests
-    //https://developers.google.com/web/ilt/pwa/working-with-the-fetch-api#reading_the_response_object
     componentDidMount() {
         const body = {
             "numberOfQuestions": 5,
