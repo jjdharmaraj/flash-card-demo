@@ -20,12 +20,12 @@ class Card extends React.Component {
         return (
             React.createElement("div", {},
                 React.createElement("div", {
-                    className: `card ${cardClass}`,
+                    className: `card ${cardClass} text-center`,
                     onClick: () => this.setState({ showAnswer: !this.state.showAnswer })
                 },
 
                     React.createElement("div", { className: `card__content--${contentClass}` },
-                        content,
+                        content.replace('。', ''),
                         React.createElement("div", { className: `card__content--${pinyinClass}` },
                             pinyinContent)),
                     React.createElement("div", { className: `card__actions ${actionClass}` },
