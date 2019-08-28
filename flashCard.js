@@ -47,7 +47,7 @@ class Card extends React.Component {
                 React.createElement("div", {
                     className: "audio_container"
                 },
-                    React.createElement("AUDIO",
+                    React.createElement("audio",
                         {
                             src: audioFile,
                             id: "player", controls: "controls",
