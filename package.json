@@ -4,7 +4,7 @@
   "description": "",
   "keywords": [],
   "main": "src/index.js",
-  "homepage": "https://jjdharmaraj.github.io/flash-card-demo/build",
+  "homepage": "https://jjdharmaraj.github.io/flash-card-demo",
   "dependencies": {
     "@material-ui/core": "^4.3.3",
     "@material-ui/icons": "^4.2.1",
