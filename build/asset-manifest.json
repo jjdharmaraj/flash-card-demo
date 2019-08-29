@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/flash-card-demo/static/css/main.38401444.chunk.css",
-    "main.js": "/flash-card-demo/static/js/main.b078a6e4.chunk.js",
-    "main.js.map": "/flash-card-demo/static/js/main.b078a6e4.chunk.js.map",
-    "runtime~main.js": "/flash-card-demo/static/js/runtime~main.368cee05.js",
-    "runtime~main.js.map": "/flash-card-demo/static/js/runtime~main.368cee05.js.map",
-    "static/js/2.f37aefb3.chunk.js": "/flash-card-demo/static/js/2.f37aefb3.chunk.js",
-    "static/js/2.f37aefb3.chunk.js.map": "/flash-card-demo/static/js/2.f37aefb3.chunk.js.map",
-    "index.html": "/flash-card-demo/index.html",
-    "precache-manifest.0ae5ee8ae0a1252d66df506649f0298e.js": "/flash-card-demo/precache-manifest.0ae5ee8ae0a1252d66df506649f0298e.js",
-    "service-worker.js": "/flash-card-demo/service-worker.js",
-    "static/css/main.38401444.chunk.css.map": "/flash-card-demo/static/css/main.38401444.chunk.css.map"
+    "main.css": "/flash-card-demo/build/static/css/main.38401444.chunk.css",
+    "main.js": "/flash-card-demo/build/static/js/main.553f325c.chunk.js",
+    "main.js.map": "/flash-card-demo/build/static/js/main.553f325c.chunk.js.map",
+    "runtime~main.js": "/flash-card-demo/build/static/js/runtime~main.98c9086f.js",
+    "runtime~main.js.map": "/flash-card-demo/build/static/js/runtime~main.98c9086f.js.map",
+    "static/js/2.f37aefb3.chunk.js": "/flash-card-demo/build/static/js/2.f37aefb3.chunk.js",
+    "static/js/2.f37aefb3.chunk.js.map": "/flash-card-demo/build/static/js/2.f37aefb3.chunk.js.map",
+    "index.html": "/flash-card-demo/build/index.html",
+    "precache-manifest.a4d32664db9229d5a7aae496ba611806.js": "/flash-card-demo/build/precache-manifest.a4d32664db9229d5a7aae496ba611806.js",
+    "service-worker.js": "/flash-card-demo/build/service-worker.js",
+    "static/css/main.38401444.chunk.css.map": "/flash-card-demo/build/static/css/main.38401444.chunk.css.map"
   }
 }
