@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/flash-card-demo/static/css/main.38401444.chunk.css",
-    "main.js": "/flash-card-demo/static/js/main.553f325c.chunk.js",
-    "main.js.map": "/flash-card-demo/static/js/main.553f325c.chunk.js.map",
+    "main.css": "/flash-card-demo/static/css/main.0709eb80.chunk.css",
+    "main.js": "/flash-card-demo/static/js/main.c79c810d.chunk.js",
+    "main.js.map": "/flash-card-demo/static/js/main.c79c810d.chunk.js.map",
     "runtime~main.js": "/flash-card-demo/static/js/runtime~main.368cee05.js",
     "runtime~main.js.map": "/flash-card-demo/static/js/runtime~main.368cee05.js.map",
-    "static/js/2.f37aefb3.chunk.js": "/flash-card-demo/static/js/2.f37aefb3.chunk.js",
-    "static/js/2.f37aefb3.chunk.js.map": "/flash-card-demo/static/js/2.f37aefb3.chunk.js.map",
+    "static/js/2.43e679fb.chunk.js": "/flash-card-demo/static/js/2.43e679fb.chunk.js",
+    "static/js/2.43e679fb.chunk.js.map": "/flash-card-demo/static/js/2.43e679fb.chunk.js.map",
     "index.html": "/flash-card-demo/index.html",
-    "precache-manifest.742babdb5c6f4f4b784b3990e8605df5.js": "/flash-card-demo/precache-manifest.742babdb5c6f4f4b784b3990e8605df5.js",
+    "precache-manifest.6be8981336bc0226d71a4853146eff70.js": "/flash-card-demo/precache-manifest.6be8981336bc0226d71a4853146eff70.js",
     "service-worker.js": "/flash-card-demo/service-worker.js",
-    "static/css/main.38401444.chunk.css.map": "/flash-card-demo/static/css/main.38401444.chunk.css.map"
+    "static/css/main.0709eb80.chunk.css.map": "/flash-card-demo/static/css/main.0709eb80.chunk.css.map"
   }
 }
