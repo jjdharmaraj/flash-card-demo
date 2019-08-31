@@ -1,13 +1,20 @@
 import React from "react";
+import { Button, Card, Paper } from "@material-ui/core";
+import { PlayArrow } from "@material-ui/icons";
 const Immutable = require("immutable");
 var _ = require("lodash");
+
 const QUESTION_URL = `https://pdlahxxojf.execute-api.us-east-1.amazonaws.com/prod/basic-test/`;
-class Card extends React.Component {
+
+class FlashCard extends React.Component {
   constructor() {
     super();
     this.state = {
       showAnswer: false
     };
+  }
+  PlaySound(url) {
+    new Audio(url).play();
   }
   render() {
     //back && answer=true are the english and front && answer=false is the simplified/pinyin
@@ -21,13 +28,12 @@ class Card extends React.Component {
     const cardClass = this.state.showAnswer ? "back" : "";
     const contentClass = this.state.showAnswer ? "back" : "front";
     const pinyinClass = this.state.showAnswer ? "nope" : "pinyin";
-    const actionClass = this.state.showAnswer ? "active" : "";
 
     return React.createElement(
-      "div",
-      {},
+      Paper,
+      { elevation: 0 },
       React.createElement(
-        "div",
+        Card,
         {
           className: `card ${cardClass} text-center`,
           onClick: () => this.setState({ showAnswer: !this.state.showAnswer })
@@ -42,44 +48,58 @@ class Card extends React.Component {
             { className: `card__content--${pinyinClass}` },
             pinyinContent
           )
-        ),
-        React.createElement(
-          "div",
-          { className: `card__actions ${actionClass}` },
-          React.createElement(
-            "div",
-            {
-              className: "card__prev-button",
-              onClick: () => {
-                this.props.showPrevCard();
-                this.setState({ showAnswer: false });
-              }
-            },
-            "Prev"
-          ),
-          React.createElement(
-            "div",
-            {
-              className: "card__next-button",
-              onClick: () => {
-                this.props.showNextCard();
-                this.setState({ showAnswer: false });
-              }
-            },
-            "Next"
-          )
         )
       ),
       React.createElement(
         "div",
-        {
-          className: "audio_container"
-        },
-        React.createElement("audio", {
-          src: audioFile,
-          id: "player",
-          controls: "controls"
-        })
+        { className: `audioButton` },
+        React.createElement(
+          Button,
+          {
+            color: `primary`,
+            variant: `text`,
+            size: `small`,
+            style: {},
+            disabled: false,
+            title: `Play Audio`,
+            onClick: () => {
+              this.PlaySound(audioFile);
+            }
+          },
+          React.createElement(PlayArrow, { fontSize: "default" })
+        )
+      ),
+      React.createElement(
+        "div",
+        { className: `card__actions` },
+        React.createElement(
+          Button,
+          {
+            color: `primary`,
+            variant: `text`,
+            size: `small`,
+            className: "card__prev-button",
+            onClick: () => {
+              this.props.showPrevCard();
+              this.setState({ showAnswer: false });
+            }
+          },
+          "Prev"
+        ),
+        React.createElement(
+          Button,
+          {
+            color: `primary`,
+            variant: `text`,
+            size: `small`,
+            className: "card__next-button",
+            onClick: () => {
+              this.props.showNextCard();
+              this.setState({ showAnswer: false });
+            }
+          },
+          "Next"
+        )
       )
     );
   }
@@ -144,7 +164,7 @@ class CardContainer extends React.Component {
     const newCards = this.state.cards.push(card);
     this.setState({ cards: newCards });
   }
-  //TODO-1: this no longer works and lodash probably is not needed
+  //TODO-1: replace this with material and porbably remove lodash
   generateDots() {
     const times = this.state.cards.size;
     let arr = [];
@@ -166,7 +186,7 @@ class CardContainer extends React.Component {
       return React.createElement(
         "div",
         {},
-        React.createElement(Card, {
+        React.createElement(FlashCard, {
           simplifiedContent: card.get("simplified"),
           pinyinContent: card.get("pinyin"),
           backContent: card.get("english"),
@@ -182,8 +202,8 @@ class CardContainer extends React.Component {
   }
   render() {
     return React.createElement(
-      "div",
-      {},
+      Paper,
+      { elevation: 0 },
       this.generateCards(),
       React.createElement(
         "div",
@@ -193,22 +213,4 @@ class CardContainer extends React.Component {
     );
   }
 }
-
-class FlashCard extends React.Component {
-  render() {
-    return React.createElement(
-      "div",
-      { className: "wrapper" },
-      React.createElement(
-        "div",
-        { className: "content-wrapper" },
-        React.createElement(CardContainer, null)
-      )
-    );
-  }
-}
-// ReactDOM.render(
-//   React.createElement(Main, null),
-//   document.getElementById("app")
-// );
-export default FlashCard;
+export default CardContainer;
