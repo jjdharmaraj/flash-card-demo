@@ -42,7 +42,11 @@ class FlashCard extends React.Component {
         React.createElement(
           "div",
           { className: `card__content--${contentClass}` },
-          content.replace("。", ""),
+          React.createElement(
+            "span",
+            { className: "card__content--simplified" },
+            content.replace("。", "")
+          ),
           React.createElement(
             "div",
             { className: `card__content--${pinyinClass}` },
@@ -119,7 +123,7 @@ class CardContainer extends React.Component {
   }
   componentDidMount() {
     const body = {
-      numberOfQuestions: 5,
+      numberOfQuestions: 10,
       numberOfChoices: 1,
       category: "HSK_1"
     };

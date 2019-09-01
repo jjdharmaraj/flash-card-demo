@@ -11,7 +11,8 @@ export const theme = createMuiTheme({
     MuiCard: {
       root: {
         color: "#f1f2f6",
-        backgroundColor: "#38383d"
+        backgroundColor: "#38383d",
+        fontFamily: "Roboto"
       }
     },
     MuiPaper: {
