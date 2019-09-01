@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Card, Paper } from "@material-ui/core";
+import { Button, Card, Paper, Grid } from "@material-ui/core";
 import { PlayArrow } from "@material-ui/icons";
 const Immutable = require("immutable");
 var _ = require("lodash");
@@ -28,7 +28,8 @@ class FlashCard extends React.Component {
     const cardClass = this.state.showAnswer ? "back" : "";
     const contentClass = this.state.showAnswer ? "back" : "front";
     const pinyinClass = this.state.showAnswer ? "nope" : "pinyin";
-
+    const categories = this.props.categories;
+    // const categories = ["123", "456", "789"];
     return React.createElement(
       Paper,
       { elevation: 0 },
@@ -38,7 +39,6 @@ class FlashCard extends React.Component {
           className: `card ${cardClass} text-center`,
           onClick: () => this.setState({ showAnswer: !this.state.showAnswer })
         },
-
         React.createElement(
           "div",
           { className: `card__content--${contentClass}` },
@@ -51,6 +51,26 @@ class FlashCard extends React.Component {
             "div",
             { className: `card__content--${pinyinClass}` },
             pinyinContent
+          )
+        )
+      ),
+      React.createElement(
+        Grid,
+        {
+          container: true,
+          justify: "flex-end",
+          direction: "row",
+          alignItems: "flex-end"
+        },
+        categories.map((c, index) =>
+          React.createElement(
+            Grid,
+            {
+              item: true,
+              key: `${index}_${this.state.cardNumber}`,
+              className: `categories`
+            },
+            c
           )
         )
       ),
@@ -142,7 +162,7 @@ class CardContainer extends React.Component {
       })
       .then(cards => {
         let questions = cards.questions;
-        console.log(cards.META_DATA);
+        // console.log(cards.META_DATA);
         this.setState({ cards: Immutable.fromJS(questions), cardNumber: 0 });
       })
       .catch(function(error) {
@@ -198,7 +218,8 @@ class CardContainer extends React.Component {
           backAudio: card.get("englishUrl"),
           showNextCard: this.boundShowNextCard,
           showPrevCard: this.boundShowPrevCard,
-          cardNumber: this.state.cardNumber
+          cardNumber: this.state.cardNumber,
+          categories: card.get("categories")
         })
       );
     });
@@ -212,7 +233,8 @@ class CardContainer extends React.Component {
       React.createElement(
         "div",
         { className: "card-container__dots-wrapper" },
-        this.generateDots()
+        this.generateDots(),
+        React.createElement("div", {})
       )
     );
   }

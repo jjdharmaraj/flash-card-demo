@@ -37,14 +37,23 @@ body {
   box-shadow: 2px 3px 23px rgba(0, 0, 0, 0.1);
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
-  margin-top: 4em;
+  margin-top: 0.5em;
   transition: 0.2s;
   text-align: center;
 }
-
+.categories {
+  padding-right: 4px;
+  padding-left: 4px;
+  padding-top: 4px;
+  font-size: 14px;
+}
+/* Not sure if I will need this later */
 @media (max-width: 600px) {
   .card {
     width: 25em;
+  }
+  .categories {
+    padding-right: 16px;
   }
 }
 
